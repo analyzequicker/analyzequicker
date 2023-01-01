@@ -1,21 +1,16 @@
-import Plot from "react-plotly.js";
+// import Plot from "react-plotly.js";
+// import axios from "axios";
+
+import React, { useState } from "react";
+
+// this.state = { data: "no data yet" };
 
 function App() {
+  const [value, setValue] = useState(1);
   return (
     <div>
-      <Plot
-        data={[
-          {
-            x: [1, 2, 3],
-            y: [2, 6, 3],
-            type: "scatter",
-            mode: "lines+markers",
-            marker: { color: "red" },
-          },
-          { type: "bar", x: [1, 2, 3], y: [2, 5, 3] },
-        ]}
-        layout={{ width: 320, height: 240, title: "A Fancy Plot" }}
-      />
+      <p>{value}</p>
+      <button onClick={() => setValue(value + 1)}>Increment Value</button>
     </div>
   );
 }
